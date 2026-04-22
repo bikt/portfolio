@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "work": "Work",
+    "about": "About"
+  },
+  "home": {
+    "role": "Product UX/UI Designer",
+    "tagline_line1": "Making",
+    "tagline_line2": "complex",
+    "tagline_line3": "simple",
+    "description": "Designing product experiences\nin fintech, b2b and consumer apps.\nFrom research to interface.",
+    "selected_work": "Selected Work",
+    "about_text": "I work at the intersection of research, strategy and interface. I believe good design is invisible — it just works.",
+    "scroll_hint": "Work"
+  },
+  "about": {
+    "title": "About",
+    "bio_1": "Product UX/UI designer focused on fintech and b2b products. I work from research to final interface.",
+    "bio_2": "Approach: understand the problem first, then design the solution. Not the other way around.",
+    "experience_title": "Experience",
+    "contact_title": "Contact",
+    "cv_download": "Download CV"
+  },
+  "case": {
+    "back": "← Work",
+    "next_case": "Next case"
+  }
+}
