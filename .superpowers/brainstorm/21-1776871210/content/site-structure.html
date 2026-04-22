@@ -1,0 +1,92 @@
+<h2>Структура сайта</h2>
+<p class="subtitle">Страницы и их связи — всё ли так?</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+
+  <!-- Pages list -->
+  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:20px;">
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">Страницы</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;flex-shrink:0;">01</div>
+        <div>
+          <div style="font-size:12px;color:#fff;font-weight:600;">/ — Главная</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);">Имя + индекс кейсов + about-snippet</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;flex-shrink:0;">02</div>
+        <div>
+          <div style="font-size:12px;color:#fff;font-weight:600;">/work/[slug] — Кейс</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);">Гибкая структура, MDX-контент</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;flex-shrink:0;">03</div>
+        <div>
+          <div style="font-size:12px;color:#fff;font-weight:600;">/about — О себе</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);">Опыт, подход, контакт</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:20px;">
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">Навигация</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.6);">Логотип / Имя</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);">→ Главная</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.6);">Work</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);">→ Индекс кейсов</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="font-size:11px;color:rgba(255,255,255,0.6);">About</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);">→ О себе</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
+        <div style="font-size:11px;color:rgba(255,255,255,0.6);">RU / EN</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);">Переключатель языка</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Homepage layout preview -->
+<div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:20px;">
+  <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">Главная страница — зоны</div>
+  <div style="display:flex;flex-direction:column;gap:4px;">
+    <div style="background:rgba(255,255,255,0.08);border-radius:2px;padding:12px 16px;display:flex;justify-content:space-between;">
+      <div style="font-size:11px;color:#fff;font-weight:600;">Навигация</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.3);">Имя слева · Work / About / RU·EN справа</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.05);border-radius:2px;padding:20px 16px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-size:11px;color:#fff;font-weight:600;">Hero-секция</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px;">Имя огромно, роль мелко, асимметрия, контрформа из цифр</div>
+      </div>
+      <div style="font-size:9px;color:rgba(255,255,255,0.2);">100vh</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border-radius:2px;padding:16px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-size:11px;color:#fff;font-weight:600;">Индекс кейсов</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px;">Нумерованный список, hover — превью, год, тег</div>
+      </div>
+      <div style="font-size:9px;color:rgba(255,255,255,0.2);">auto</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.03);border-radius:2px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-size:11px;color:#fff;font-weight:600;">About-snippet + контакт</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px;">2–3 строки о себе + email / соцсети</div>
+      </div>
+      <div style="font-size:9px;color:rgba(255,255,255,0.2);">compact</div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.35);line-height:1.6;padding:0 4px;">
+  Всё верно, или хотите изменить структуру? Ответьте в терминале.
+</div>

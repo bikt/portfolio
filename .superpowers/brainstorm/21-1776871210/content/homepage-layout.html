@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage Layout</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; color: #fff; font-family: -apple-system, 'Helvetica Neue', sans-serif; }
+
+  .page-label {
+    position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 6px 16px; font-size: 11px;
+    color: rgba(255,255,255,0.5); letter-spacing: 0.1em; z-index: 100;
+    white-space: nowrap;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 48px;
+  }
+  .nav-logo {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .nav-links {
+    display: flex; gap: 32px; align-items: center;
+  }
+  .nav-links a {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-decoration: none;
+  }
+  .nav-lang {
+    font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.25);
+    border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px;
+  }
+  .nav-lang span { color: rgba(255,255,255,0.6); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 0 48px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-bottom: 80px; position: relative; overflow: hidden;
+  }
+
+  /* Counterform big number */
+  .hero-counterform {
+    position: absolute; right: -40px; top: 50%; transform: translateY(-60%);
+    font-size: clamp(200px, 28vw, 380px); font-weight: 900;
+    color: rgba(255,255,255,0.025); line-height: 1; letter-spacing: -0.05em;
+    user-select: none; pointer-events: none;
+  }
+
+  /* Asymmetric hero grid */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: end;
+    position: relative; z-index: 2;
+  }
+
+  .hero-role {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 16px;
+  }
+
+  .hero-name {
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: #fff;
+  }
+  .hero-name .outline {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.25);
+    color: transparent;
+  }
+
+  .hero-right {
+    padding-bottom: 8px;
+  }
+  .hero-divider {
+    width: 100%; height: 1px; background: rgba(255,255,255,0.12); margin-bottom: 20px;
+  }
+  .hero-desc {
+    font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.4);
+    margin-bottom: 24px;
+  }
+  .hero-tags {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .hero-tag {
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 2px;
+    padding: 4px 12px; font-size: 10px; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  /* SCROLL HINT */
+  .scroll-hint {
+    position: absolute; bottom: 32px; left: 48px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 40px; height: 1px; background: rgba(255,255,255,0.15);
+  }
+
+  /* CASES INDEX */
+  .cases {
+    padding: 80px 48px 120px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .cases-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 48px;
+  }
+  .cases-title {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .cases-count {
+    font-size: 11px; color: rgba(255,255,255,0.15);
+  }
+
+  .case-row {
+    display: grid;
+    grid-template-columns: 64px 1fr 140px 80px;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .case-row:hover { background: rgba(255,255,255,0.02); }
+  .case-row:hover .case-arrow { opacity: 1; transform: translateX(4px); }
+  .case-row:hover .case-title { color: #fff; }
+
+  .case-num {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
+  }
+  .case-info { display: flex; flex-direction: column; gap: 4px; }
+  .case-title {
+    font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.85);
+    letter-spacing: -0.03em; transition: color 0.2s;
+  }
+  .case-sub {
+    font-size: 11px; color: rgba(255,255,255,0.25);
+  }
+  .case-tags { display: flex; gap: 6px; }
+  .case-tag {
+    font-size: 10px; color: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 2px;
+    padding: 3px 8px;
+  }
+  .case-year {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    text-align: right; letter-spacing: 0.05em;
+  }
+  .case-arrow {
+    position: absolute; right: 0;
+    font-size: 16px; color: rgba(255,255,255,0.2);
+    opacity: 0; transition: opacity 0.2s, transform 0.2s;
+  }
+
+  /* ABOUT SNIPPET */
+  .about-snippet {
+    padding: 80px 48px 100px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .about-text {
+    font-size: 20px; line-height: 1.5; color: rgba(255,255,255,0.5);
+    font-weight: 300; letter-spacing: -0.01em;
+  }
+  .about-text strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+  .about-contact {
+    display: flex; flex-direction: column; gap: 16px; justify-content: center;
+  }
+  .contact-link {
+    font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<div class="page-label">Макет главной страницы — http://localhost:63569</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Иван Иванов</div>
+  <div class="nav-links">
+    <a href="#">Work</a>
+    <a href="#">About</a>
+    <div class="nav-lang"><span>RU</span> / EN</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-counterform">UX</div>
+
+  <div class="hero-grid">
+    <div>
+      <div class="hero-role">Product UX/UI Designer</div>
+      <div class="hero-name">
+        Делаю<br>
+        сложное<br>
+        <span class="outline">понятным</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-divider"></div>
+      <div class="hero-desc">
+        Проектирую продуктовый опыт<br>
+        в fintech, b2b и consumer apps.<br>
+        От исследования до интерфейса.
+      </div>
+      <div class="hero-tags">
+        <div class="hero-tag">UX Research</div>
+        <div class="hero-tag">Product Design</div>
+        <div class="hero-tag">Systems</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Работы
+  </div>
+</section>
+
+<!-- CASES INDEX -->
+<section class="cases">
+  <div class="cases-header">
+    <div class="cases-title">Избранные работы</div>
+    <div class="cases-count">4 кейса</div>
+  </div>
+
+  <div class="case-row">
+    <div class="case-num">01</div>
+    <div class="case-info">
+      <div class="case-title">Redesign платёжного флоу</div>
+      <div class="case-sub">Fintech · iOS & Android</div>
+    </div>
+    <div class="case-tags">
+      <div class="case-tag">UX Research</div>
+      <div class="case-tag">Design System</div>
+    </div>
+    <div class="case-year">2024</div>
+    <div class="case-arrow">→</div>
+  </div>
+
+  <div class="case-row">
+    <div class="case-num">02</div>
+    <div class="case-info">
+      <div class="case-title">B2B SaaS — онбординг</div>
+      <div class="case-sub">Enterprise · Web</div>
+    </div>
+    <div class="case-tags">
+      <div class="case-tag">Jobs to be Done</div>
+      <div class="case-tag">Prototype</div>
+    </div>
+    <div class="case-year">2024</div>
+    <div class="case-arrow">→</div>
+  </div>
+
+  <div class="case-row">
+    <div class="case-num">03</div>
+    <div class="case-info">
+      <div class="case-title">Mobile App — health tracker</div>
+      <div class="case-sub">Consumer · iOS</div>
+    </div>
+    <div class="case-tags">
+      <div class="case-tag">0→1</div>
+      <div class="case-tag">Motion</div>
+    </div>
+    <div class="case-year">2023</div>
+    <div class="case-arrow">→</div>
+  </div>
+
+  <div class="case-row">
+    <div class="case-num">04</div>
+    <div class="case-info">
+      <div class="case-title">Design System · Fintech</div>
+      <div class="case-sub">Component library · Figma + React</div>
+    </div>
+    <div class="case-tags">
+      <div class="case-tag">Design System</div>
+      <div class="case-tag">Tokens</div>
+    </div>
+    <div class="case-year">2023</div>
+    <div class="case-arrow">→</div>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section class="about-snippet">
+  <div class="about-text">
+    Работаю на стыке <strong>исследования, стратегии и интерфейса.</strong>
+    Верю, что хороший дизайн невидим — он просто работает.
+  </div>
+  <div class="about-contact">
+    <a class="contact-link" href="#">hello@example.com <span>↗</span></a>
+    <a class="contact-link" href="#">Telegram <span>↗</span></a>
+    <a class="contact-link" href="#">LinkedIn <span>↗</span></a>
+  </div>
+</section>
+
+</body>
+</html>

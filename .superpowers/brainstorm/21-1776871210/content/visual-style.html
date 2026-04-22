@@ -1,0 +1,87 @@
+<h2>Визуальный стиль портфолио</h2>
+<p class="subtitle">Какое общее ощущение должен создавать сайт?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f0f;padding:20px;min-height:160px;display:flex;flex-direction:column;gap:12px;">
+      <div style="width:40px;height:3px;background:#fff;border-radius:2px;"></div>
+      <div style="font-family:serif;font-size:22px;color:#fff;letter-spacing:-0.5px;line-height:1.2;">Product Designer<br>& Researcher</div>
+      <div style="width:100%;height:1px;background:rgba(255,255,255,0.15);"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div style="border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,0.7);">UX Research</div>
+        <div style="border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,0.7);">Product Design</div>
+      </div>
+      <div style="margin-top:auto;display:flex;gap:6px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);"></div>
+        <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Тёмный / Премиум</h3>
+      <p>Чёрный фон, белая типографика с засечками, минимализм. Ощущение — эксклюзив, высокий класс. Хорошо для клиентов уровня enterprise.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f0eb;padding:20px;min-height:160px;display:flex;flex-direction:column;gap:12px;">
+      <div style="font-family:serif;font-size:22px;color:#1a1a1a;letter-spacing:-0.5px;line-height:1.2;">Product Designer<br>& Researcher</div>
+      <div style="width:100%;height:1px;background:rgba(0,0,0,0.12);"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div style="background:#e8ddd4;border-radius:4px;padding:4px 10px;font-size:11px;color:#555;">UX Research</div>
+        <div style="background:#e8ddd4;border-radius:4px;padding:4px 10px;font-size:11px;color:#555;">Product Design</div>
+      </div>
+      <div style="margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <div style="height:32px;background:#ddd5cc;border-radius:4px;"></div>
+        <div style="height:32px;background:#e8ddd4;border-radius:4px;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Тёплый / Органичный</h3>
+      <p>Кремовый фон, тёплые нейтральные цвета, мягкие формы. Ощущение — живой, человечный, доступный. Хорошо для стартапов и продуктовых команд.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#ffffff;padding:20px;min-height:160px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #eee;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:8px;height:8px;border-radius:50%;background:#0057FF;"></div>
+        <div style="font-size:12px;color:#0057FF;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">Portfolio</div>
+      </div>
+      <div style="font-size:22px;color:#0a0a0a;font-weight:700;letter-spacing:-0.5px;line-height:1.2;">Product Designer<br>& Researcher</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <div style="background:#EEF3FF;border-radius:4px;padding:4px 10px;font-size:11px;color:#0057FF;font-weight:500;">UX Research</div>
+        <div style="background:#EEF3FF;border-radius:4px;padding:4px 10px;font-size:11px;color:#0057FF;font-weight:500;">Product Design</div>
+      </div>
+      <div style="margin-top:auto;">
+        <div style="height:32px;background:#0057FF;border-radius:6px;display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:11px;color:#fff;font-weight:600;">Смотреть кейсы →</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Светлый / Профессиональный</h3>
+      <p>Белый фон, акцентный синий, чёткая сетка. Ощущение — системно, надёжно, product-first. Хорошо для B2B и корпоративных клиентов.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fafafa;padding:20px;min-height:160px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #f0f0f0;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div style="font-size:22px;color:#0a0a0a;font-weight:300;letter-spacing:-1px;line-height:1.2;">Product<br>Designer</div>
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FF6B6B,#FFE66D);"></div>
+      </div>
+      <div style="width:100%;height:1px;background:#f0f0f0;"></div>
+      <div style="display:flex;gap:6px;">
+        <div style="padding:4px 10px;font-size:11px;color:#999;border:1px solid #eee;border-radius:20px;">UX Research</div>
+        <div style="padding:4px 10px;font-size:11px;color:#999;border:1px solid #eee;border-radius:20px;">Product Design</div>
+      </div>
+      <div style="margin-top:auto;font-size:11px;color:#bbb;letter-spacing:0.1em;text-transform:uppercase;">Scroll to explore</div>
+    </div>
+    <div class="card-body">
+      <h3>Нейтральный / Современный</h3>
+      <p>Светло-серый фон, лёгкие цветные акценты, воздух. Ощущение — современно, небанально, творческий подход. Хорошо для продуктовых компаний среднего размера.</p>
+    </div>
+  </div>
+
+</div>
