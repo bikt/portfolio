@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import Nav from '@/components/Nav';
+import PageTransition from '@/components/PageTransition';
 import '../globals.css';
 
 const inter = Inter({
@@ -35,7 +36,9 @@ export default async function LocaleLayout({
       <body className="bg-bg text-text-primary font-sans">
         <NextIntlClientProvider messages={messages}>
           <Nav />
-          <main>{children}</main>
+          <main>
+            <PageTransition>{children}</PageTransition>
+          </main>
         </NextIntlClientProvider>
       </body>
     </html>
