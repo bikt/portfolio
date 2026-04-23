@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 
-// ISO 3200 film grain — 2px chunks, opacity 0.1, ~3fps update
+// ISO 3200 film grain — 2px chunks, opacity 0.1, 60fps flicker
+// Playground values: intensity=18, speed=100, scale=25, vignette=off
 export default function GrainOverlay() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -12,10 +13,10 @@ export default function GrainOverlay() {
     const offscreen = document.createElement('canvas');
     const offCtx = offscreen.getContext('2d')!;
 
-    const GRAIN_SIZE  = 2;      // px per grain pixel
-    const OPACITY     = 0.1;    // layer opacity
-    const DENSITY     = 0.117;  // fraction of bright grains (≈ intensity 65%)
-    const UPDATE_EVERY = 18;    // frames between redraws → ~3.3 fps at 60 fps
+    const GRAIN_SIZE   = 2;      // scale=25 → 2px per grain pixel
+    const OPACITY      = 0.1;    // layer opacity
+    const DENSITY      = 0.032;  // intensity=18 → ~3.2% bright grains
+    const UPDATE_EVERY = 1;      // speed=100 → every frame (60fps flicker)
 
     let raf: number;
     let frame = 0;
