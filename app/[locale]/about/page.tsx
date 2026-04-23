@@ -43,7 +43,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
         <p className="text-[10px] tracking-wide-label uppercase text-white/20 mb-8">{t('contact_title')}</p>
         <div className="space-y-4 max-w-sm">
           {[
-            { label: 'hello@example.com', href: 'mailto:hello@example.com' },
+            { label: 'mr.bikt89@gmail.com', href: 'mailto:mr.bikt89@gmail.com' },
             { label: 'Telegram', href: 'https://t.me/yourhandle' },
             { label: 'LinkedIn', href: 'https://linkedin.com/in/yourprofile' },
           ].map(link => (

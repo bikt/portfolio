@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Иван Иванов — Product Designer',
+  title: 'Евгений Бикташев — Product Designer',
   description: 'Product UX/UI Designer — fintech, b2b, consumer apps',
 };
 

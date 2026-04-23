@@ -24,7 +24,7 @@ export default function Nav() {
         href={`/${locale}`}
         className="text-[11px] tracking-wide-label uppercase text-text-muted hover:text-text-secondary transition-colors"
       >
-        Иван Иванов
+        евгений бикташев
       </Link>
 
       <div className="flex items-center gap-8">

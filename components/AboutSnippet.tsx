@@ -12,7 +12,7 @@ export default function AboutSnippet() {
 
       <div className="flex flex-col gap-4 justify-center">
         {[
-          { label: 'hello@example.com', href: 'mailto:hello@example.com' },
+          { label: 'mr.bikt89@gmail.com', href: 'mailto:mr.bikt89@gmail.com' },
           { label: 'Telegram', href: 'https://t.me/yourhandle' },
           { label: 'LinkedIn', href: 'https://linkedin.com/in/yourprofile' },
         ].map(link => (
