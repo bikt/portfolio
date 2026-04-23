@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import Nav from '@/components/Nav';
 import PageTransition from '@/components/PageTransition';
+import CursorFollower from '@/components/CursorFollower';
 import '../globals.css';
 
 const inter = Inter({
@@ -35,6 +36,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-bg text-text-primary font-sans">
         <NextIntlClientProvider messages={messages}>
+          <CursorFollower />
           <Nav />
           <main>
             <PageTransition>{children}</PageTransition>
